@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: 0.16rem .1rem;
+  background-color: #ff841d;
+  padding: 0.2rem 0.2rem;
+}
+
+header span {
+  font-size: 0.5rem;
+  color: #fff;
+}
+
+header h2 {
+  font-size: 0.36rem;
+  color: white;
+}
+
+header a {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+header a img {
+  width: 100%;
+}
+
+.view {
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 0.45rem;
+}
+
+.view a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.3rem;
+  font-weight: 500;
+  background-color: #f4f4f4;
+  padding: 8px 5px;
+  margin: 6px;
+  -webkit-box-shadow: 0 0 4px 1px #ccc;
+          box-shadow: 0 0 4px 1px #ccc;
+}
+
+.view a img {
+  height: 0.3rem;
+  width: 0.3rem;
+  margin-right: 0.1rem;
+}
+/*# sourceMappingURL=index.css.map */

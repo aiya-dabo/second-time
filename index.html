@@ -1,0 +1,95 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+<body>
+    <header>
+    <span> < </span>
+    <h2>商城导航</h2>
+        <a href="javascript:;">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+    <div class="view">
+      <!-- <a href="javascript:;" class='jd'>
+          <img src="" alt="">京东商城
+      </a>
+     <a href="javascript:;">
+         <img src="" alt="">当当
+     </a>
+     <a href="javascript:;">
+         <img src="" alt="">
+         中国亚马逊
+     </a>
+     <a href="javascript:;">
+         <img src="" alt="">
+         苏宁易购
+     </a>
+    <a href="javascript:;">
+        <img src="" alt="">
+        国美在线
+    </a> -->
+   </div>
+</body>
+<!-- // 模板 -->
+<script id='navMarket' type="text/html">
+{{each  arr value index}}
+ <a href="{{value.navHref}}" class='{{value.navId}}'>
+      <img  src='{{ value.navImg}}' alt="">   <span>{{value.navTitle}}</span>
+      </a>
+{{/each}}
+
+</script>
+
+<script>
+    // 相对长度
+    
+  onload = function () {
+    setHTML();
+
+    // 为了在pc端更好的去调试
+    onresize = function () {
+      setHTML();
+    }
+
+    function setHTML() {
+      // 基础值
+      var baseVal = 100;
+      // 设计稿的宽度
+      var pageWidth = 640;
+      // 要适配的屏幕的宽度?
+      var screenWidth = document.querySelector("html").offsetWidth;
+      // 要设置的fontsize
+      var fontsize = screenWidth * baseVal / pageWidth;
+
+      // 设置到html标签的中
+      document.querySelector("html").style.fontSize = fontsize + "px";
+
+    }
+  }
+
+
+
+</script>
+<!-- 模板引擎 -->
+<script src='./lib/arttemplate/template-web.js'></script>
+<!-- zepto 移动端的js-->
+<script src='./lib/zepto/zepto.js'></script>
+<script src='./js/index.js'></script>
+<script>    
+    $.get("http://193.112.55.79:9090/api/getsitenav",function(res){
+    console.log(res);
+    var result = template("navMarket",{arr:res.result});
+    $(".view").html(result);
+    }
+    )
+</script>
+</html>
